@@ -1,0 +1,21 @@
+{
+  "name": "FW",
+  "version": "1.0.0",
+  "description": "Description",
+  "author": "Baran Somaklı",
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-file-include": "*",
+    "gulp-cache": "*",
+    "gulp-concat": "*",
+    "gulp-imagemin": "*",
+    "gulp-minify-css": "*",
+    "gulp-htmlmin": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "gulp": "*"
+  }
+}
