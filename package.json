@@ -17,5 +17,8 @@
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "gulp": "*"
+  },
+  "scripts": {
+    "build": "npm install && gulp"
   }
 }
