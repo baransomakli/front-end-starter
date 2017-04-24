@@ -11,7 +11,6 @@
     "gulp-concat": "*",
     "gulp-imagemin": "*",
     "gulp-minify-css": "*",
-    "gulp-htmlmin": "*",
     "gulp-plumber": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",

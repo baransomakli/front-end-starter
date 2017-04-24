@@ -9,7 +9,6 @@ minify_css = require("gulp-minify-css"),
 cache = require('gulp-cache'),
 sass = require('gulp-sass'),
 file_include = require("gulp-file-include"),
-htmlmin = require('gulp-htmlmin'),
 browserSync = require('browser-sync');
 
 gulp.task('browser-sync', function() {
@@ -77,7 +76,6 @@ gulp.task('file_include', function() {
     prefix: '@@',
     basepath: '@file'
   }))
-  .pipe(htmlmin({collapseWhitespace: true, minifyJS: true}))
   .pipe(gulp.dest('www/'))
   .pipe(browserSync.reload({stream:true}))
 });
@@ -88,6 +86,6 @@ gulp.task('default', ['browser-sync','bootstrap'], function(){
   gulp.watch("dev/scripts/**/*.js", ['scripts']);
   gulp.watch("dev/pages/" + "*.html", ['file_include']);
   gulp.watch("dev/layouts/" + "*.html", ['file_include']);
-  gulp.watch("dev/layouts/" + "*/*.html", ['file_include']); 
+  gulp.watch("dev/layouts/" + "*/*.html", ['file_include']);
   gulp.watch("*.html", ['bs-reload']);
 });
