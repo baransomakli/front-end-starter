@@ -14,7 +14,7 @@ browserSync = require('browser-sync');
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-       baseDir: "./www"
+       baseDir: "./public"
     }
   });
 });
@@ -26,7 +26,7 @@ gulp.task('bs-reload', function () {
 gulp.task('images', function(){
   gulp.src('dev/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('www/assets/images/'));
+    .pipe(gulp.dest('public/assets/images/'));
 });
 
 gulp.task('styles', function(){
@@ -42,7 +42,7 @@ gulp.task('styles', function(){
         compatibility: 'ie8'
     }))
     .pipe(rename('main.min.css'))
-    .pipe(gulp.dest('www/assets/css/'))
+    .pipe(gulp.dest('public/assets/css/'))
     .pipe(browserSync.reload({stream:true}))
 });
 
@@ -53,11 +53,11 @@ gulp.task("bootstrap", function() {
         compatibility: 'ie8'
     }))
     .pipe(rename('bootstrap.min.css'))
-    .pipe(gulp.dest("www/assets/css"));
+    .pipe(gulp.dest("public/assets/css"));
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('dev/scripts/**/*.js')
+  return gulp.src('dev/js/**/*.js')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -66,7 +66,7 @@ gulp.task('scripts', function(){
     .pipe(concat('main.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('www/assets/js/'))
+    .pipe(gulp.dest('public/assets/js/'))
     .pipe(browserSync.reload({stream:true}))
 });
 
@@ -76,16 +76,16 @@ gulp.task('file_include', function() {
     prefix: '@@',
     basepath: '@file'
   }))
-  .pipe(gulp.dest('www/'))
+  .pipe(gulp.dest('public/'))
   .pipe(browserSync.reload({stream:true}))
 });
 
 
 gulp.task('default', ['browser-sync','bootstrap'], function(){
   gulp.watch("dev/styles/**/*.scss", ['styles']);
-  gulp.watch("dev/scripts/**/*.js", ['scripts']);
+  gulp.watch("dev/js/**/*.js", ['scripts']);
   gulp.watch("dev/pages/" + "*.html", ['file_include']);
-  gulp.watch("dev/layouts/" + "*.html", ['file_include']);
-  gulp.watch("dev/layouts/" + "*/*.html", ['file_include']);
+  gulp.watch("dev/parts/" + "*.html", ['file_include']);
+  gulp.watch("dev/parts/" + "*/*.html", ['file_include']);
   gulp.watch("*.html", ['bs-reload']);
 });
