@@ -14,7 +14,7 @@ browserSync = require('browser-sync');
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-       baseDir: "./public"
+       baseDir: "./www"
     }
   });
 });
@@ -26,7 +26,7 @@ gulp.task('bs-reload', function () {
 gulp.task('images', function(){
   gulp.src('dev/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('public/assets/images/'));
+    .pipe(gulp.dest('www/assets/images/'));
 });
 
 gulp.task('styles', function(){
@@ -42,7 +42,7 @@ gulp.task('styles', function(){
         compatibility: 'ie8'
     }))
     .pipe(rename('main.min.css'))
-    .pipe(gulp.dest('public/assets/css/'))
+    .pipe(gulp.dest('www/assets/css/'))
     .pipe(browserSync.reload({stream:true}))
 });
 
@@ -53,7 +53,7 @@ gulp.task("bootstrap", function() {
         compatibility: 'ie8'
     }))
     .pipe(rename('bootstrap.min.css'))
-    .pipe(gulp.dest("public/assets/css"));
+    .pipe(gulp.dest("www/assets/css"));
 });
 
 gulp.task('scripts', function(){
@@ -66,7 +66,7 @@ gulp.task('scripts', function(){
     .pipe(concat('main.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('public/assets/js/'))
+    .pipe(gulp.dest('www/assets/js/'))
     .pipe(browserSync.reload({stream:true}))
 });
 
@@ -76,7 +76,7 @@ gulp.task('file_include', function() {
     prefix: '@@',
     basepath: '@file'
   }))
-  .pipe(gulp.dest('public/'))
+  .pipe(gulp.dest('www/'))
   .pipe(browserSync.reload({stream:true}))
 });
 
