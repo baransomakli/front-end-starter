@@ -1,11 +1,34 @@
-//Import Base
-@import 'base/variables';
-@import 'base/normalize';
-@import 'base/typography';
-@import 'base/global';
+// -------------------------------------
+//   Vendors
+// -------------------------------------
 
-// Import Layouts
+// -------------------------------------
+//   Base
+// -------------------------------------
+@import 'base/variables',
+'base/typography',
+'base/global',
+'base/mixins';
+
+// -------------------------------------
+//   Layouts
+// -------------------------------------
 @import 'layouts/header';
+
+// -------------------------------------
+//   Modules
+// -------------------------------------
+// @import 'modules/';
+
+
+// -------------------------------------
+//   Pages
+// -------------------------------------
+@import 'pages/index';
+
 
 // Import Plugins
 // @import 'plugins/plugin';
+
+
+

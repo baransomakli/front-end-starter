@@ -1,0 +1,24 @@
+// Font definitions and default styles
+@mixin light {
+  font-family: $primary-font;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin regular {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin medium {
+  font-family: $primary-font;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin bold {
+  font-family: $primary-font;
+  font-weight: 700;
+  font-style: normal;
+}

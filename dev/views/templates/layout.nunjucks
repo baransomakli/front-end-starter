@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home | Front-End-Starter</title>
+  <title>{% block title %}{% endblock %} | Front-End-Starter</title>
   <meta charset="UTF-8">
   <meta name="keywords" content="">
   <meta name="description" content="">
@@ -18,15 +18,13 @@
 
 <body>
 
-<header></header>
+{% include "../parts/layouts/header.nunjucks" %}
 
-  
+  {% block content %}
 
-	
+  {% endblock %}
 
-
-
-  <footer></footer>
+  {% include "../parts/layouts/footer.nunjucks" %}
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>

@@ -1,0 +1,9 @@
+{% extends "./templates/layout.nunjucks" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+	
+
+{% endblock %}
