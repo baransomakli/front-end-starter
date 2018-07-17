@@ -8,7 +8,6 @@ imagemin = require('gulp-imagemin'),
 minify_css = require("gulp-minify-css"),
 cache = require('gulp-cache'),
 sass = require('gulp-sass'),
-// file_include = require("gulp-file-include"),
 nunjucksRender = require('gulp-nunjucks-render'),
 browserSync = require('browser-sync');
 
@@ -71,16 +70,6 @@ gulp.task('scripts', function(){
     .pipe(browserSync.reload({stream:true}))
 });
 
-// gulp.task('file_include', function() {
-//   return gulp.src("dev/pages/" + "*.html")
-//   .pipe(file_include({
-//     prefix: '@@',
-//     basepath: '@file'
-//   }))
-//   .pipe(gulp.dest('www/'))
-//   .pipe(browserSync.reload({stream:true}))
-// });
-
 
 gulp.task('nunjucks', function() {
 
@@ -97,9 +86,6 @@ gulp.task('nunjucks', function() {
 gulp.task('default', ['browser-sync','bootstrap'], function(){
   gulp.watch("dev/styles/**/*.scss", ['styles']);
   gulp.watch("dev/js/**/*.js", ['scripts']);
-  // gulp.watch("dev/pages/" + "*.html", ['file_include']);
-  // gulp.watch("dev/parts/" + "*.html", ['file_include']);
-  // gulp.watch("dev/parts/" + "*/*.html", ['file_include']);
   gulp.watch("dev/views/**/*.+(html|nunjucks)", ['nunjucks']);
   gulp.watch("www/*.html", ['bs-reload']);
 });
