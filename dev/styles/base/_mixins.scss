@@ -1,0 +1,23 @@
+@mixin hover {
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+@mixin hoverUp {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.3);
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin heightCenter {
+  display: flex;
+  align-items: center;
+}
