@@ -16,7 +16,7 @@
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "gulp-nunjucks-render": "^2.0.0",
-    "gulp": "*"
+    "gulp": "^3.9.1"
   },
   "scripts": {
     "build": "npm install && gulp"
