@@ -83,7 +83,7 @@ gulp.task('nunjucks', function() {
 
 });
 
-gulp.task('default', ['browser-sync','bootstrap'], function(){
+gulp.task('default', gulp.series('browser-sync','bootstrap'), function(){
   gulp.watch("dev/styles/**/*.scss", ['styles']);
   gulp.watch("dev/js/**/*.js", ['scripts']);
   gulp.watch("dev/views/**/*.+(html|nunjucks)", ['nunjucks']);
